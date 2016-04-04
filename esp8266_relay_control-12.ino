@@ -1,4 +1,4 @@
-// Relay control using the ESP8266 WiFi chip
+// Bulb control using the ESP8266 based Witty Board 
 
 // Import required libraries
 #include <ESP8266WiFi.h>
@@ -9,7 +9,7 @@
 aREST_UI rest = aREST_UI();
 
 // WiFi parameters
-const char* ssid = "MBLAZE-DF800i-B918";//Write the wifi name which is used as a transmiter
+const char* ssid = "MBLAZE-DF800i-B918";//Write the wifi name which is used as a transmiter, change your wifi name and password 
 const char* password = "88558855";//oasswird of thst wifi
 
 // The port to listen for incoming TCP connections 
@@ -23,7 +23,7 @@ void setup(void)
   
   // Create UI
   rest.title("Relay Control");
-  rest.button(15);
+  rest.button(15);              /*15 is GPIO PIN 5 on Witty Board where electric appliance is connected */ 
     
   // Give name and ID to device
   rest.set_id("1");
